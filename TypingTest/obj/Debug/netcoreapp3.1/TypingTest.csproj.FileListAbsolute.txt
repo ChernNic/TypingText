@@ -1,0 +1,15 @@
+C:\Users\chern\Desktop\TypingTest\TypingTest\bin\Debug\netcoreapp3.1\TypingTest.exe
+C:\Users\chern\Desktop\TypingTest\TypingTest\bin\Debug\netcoreapp3.1\TypingTest.deps.json
+C:\Users\chern\Desktop\TypingTest\TypingTest\bin\Debug\netcoreapp3.1\TypingTest.runtimeconfig.json
+C:\Users\chern\Desktop\TypingTest\TypingTest\bin\Debug\netcoreapp3.1\TypingTest.runtimeconfig.dev.json
+C:\Users\chern\Desktop\TypingTest\TypingTest\bin\Debug\netcoreapp3.1\TypingTest.dll
+C:\Users\chern\Desktop\TypingTest\TypingTest\bin\Debug\netcoreapp3.1\TypingTest.pdb
+C:\Users\chern\Desktop\TypingTest\TypingTest\obj\Debug\netcoreapp3.1\TypingTest.csproj.AssemblyReference.cache
+C:\Users\chern\Desktop\TypingTest\TypingTest\obj\Debug\netcoreapp3.1\TypingTest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chern\Desktop\TypingTest\TypingTest\obj\Debug\netcoreapp3.1\TypingTest.AssemblyInfoInputs.cache
+C:\Users\chern\Desktop\TypingTest\TypingTest\obj\Debug\netcoreapp3.1\TypingTest.AssemblyInfo.cs
+C:\Users\chern\Desktop\TypingTest\TypingTest\obj\Debug\netcoreapp3.1\TypingTest.csproj.CoreCompileInputs.cache
+C:\Users\chern\Desktop\TypingTest\TypingTest\obj\Debug\netcoreapp3.1\TypingTest.dll
+C:\Users\chern\Desktop\TypingTest\TypingTest\obj\Debug\netcoreapp3.1\TypingTest.pdb
+C:\Users\chern\Desktop\TypingTest\TypingTest\obj\Debug\netcoreapp3.1\TypingTest.genruntimeconfig.cache
+C:\Users\chern\Desktop\TypingTest\TypingTest\bin\Debug\netcoreapp3.1\Assets\error.wav
