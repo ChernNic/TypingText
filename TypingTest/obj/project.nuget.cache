@@ -1,8 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "W4LdjTRag2bQzIGwOdFca1+mBECjBo+0y932kWW02gV8B1z3Hrhh9Tw9Owz/CJYj0touG0pv+Vr3AnwxtohcRQ==",
+  "dgSpecHash": "3JEQ47Z4pzvN0AqAgD+HwK29WJFS/SVrVOieB+uBaH7FNItfl9PaZiPnXgipfc8ulY72iP5nrC8I6Dd+MWkXjA==",
   "success": true,
   "projectFilePath": "C:\\Users\\chern\\Desktop\\TypingTest\\TypingTest\\TypingTest.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\chern\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+    "C:\\Users\\chern\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\chern\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\chern\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512",
+    "C:\\Users\\chern\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }

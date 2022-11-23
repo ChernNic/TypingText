@@ -1,14 +1,10 @@
-﻿using System;
-
-namespace TypingTest
+﻿namespace TypingTest
 {
     class Program
     {
         static void Main(string[] args)
         {
-            TypingSpeedTest typingSpeedTest = new TypingSpeedTest();
-            typingSpeedTest.Test();
-
+            KeyboardMenu.MainMenu();
         }
     }
 }

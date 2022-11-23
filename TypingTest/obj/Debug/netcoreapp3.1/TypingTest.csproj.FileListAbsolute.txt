@@ -13,3 +13,12 @@ C:\Users\chern\Desktop\TypingTest\TypingTest\obj\Debug\netcoreapp3.1\TypingTest.
 C:\Users\chern\Desktop\TypingTest\TypingTest\obj\Debug\netcoreapp3.1\TypingTest.pdb
 C:\Users\chern\Desktop\TypingTest\TypingTest\obj\Debug\netcoreapp3.1\TypingTest.genruntimeconfig.cache
 C:\Users\chern\Desktop\TypingTest\TypingTest\bin\Debug\netcoreapp3.1\Assets\error.wav
+C:\Users\chern\Desktop\TypingTest\TypingTest\bin\Debug\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+C:\Users\chern\Desktop\TypingTest\TypingTest\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\chern\Desktop\TypingTest\TypingTest\bin\Debug\netcoreapp3.1\System.Windows.Extensions.dll
+C:\Users\chern\Desktop\TypingTest\TypingTest\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\chern\Desktop\TypingTest\TypingTest\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\chern\Desktop\TypingTest\TypingTest\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\chern\Desktop\TypingTest\TypingTest\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\chern\Desktop\TypingTest\TypingTest\obj\Debug\netcoreapp3.1\TypingTest.csproj.CopyComplete
+C:\Users\chern\Desktop\TypingTest\TypingTest\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll

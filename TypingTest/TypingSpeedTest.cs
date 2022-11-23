@@ -1,22 +1,60 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 using System.Media;
 using System.Diagnostics;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace TypingTest
 {
     class TypingSpeedTest
     {
+        private int CountOfLetters = 0;
+        private int Mistakes = 0;
+        bool TimeIsOver;
+        string UserName;
 
         public void Test()
         {
+            SoundPlayer soundPlayer = new SoundPlayer(@"Assets/error.wav");
+
+            TimeIsOver = false;
+
+            Console.Write("Write your name: ");
+            UserName = Console.ReadLine();
+            if (UserName == "") UserName = "John Doe";
+            Console.Clear();
+
             char[] textToWrite = TextToWrite();
             foreach (char ch in textToWrite) // выписывает текст
             {
                 Console.Write(ch);
             }
+
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.BackgroundColor = ConsoleColor.Red;
+            Console.SetCursorPosition(45, 9);
+            Console.WriteLine("                                    ");
+            Console.SetCursorPosition(45, 10);
+            Console.WriteLine("       Press Enter to begin         ");
+            Console.SetCursorPosition(45, 11);
+            Console.WriteLine("                                    ");
+
+            Console.ResetColor();
+            ConsoleKeyInfo Key;
+            do
+            {
+                Key = Console.ReadKey(true);
+            } while (Key.Key != ConsoleKey.Enter);
+
+            Console.ResetColor();
+            Console.SetCursorPosition(45, 9);
+            Console.WriteLine("                                    ");
+            Console.SetCursorPosition(45, 10);
+            Console.WriteLine("                                    ");
+            Console.SetCursorPosition(45, 11);
+            Console.WriteLine("                                    ");
 
             new Thread(Timer).Start();
 
@@ -24,9 +62,12 @@ namespace TypingTest
             int j = 0;
             foreach (char letter in textToWrite)
             {
+                if (TimeIsOver) break;
+
                 Console.CursorVisible = true;
 
                 char userKey = Console.ReadKey(true).KeyChar;
+
                 try
                 {
                     Console.SetCursorPosition(i, j);
@@ -43,15 +84,20 @@ namespace TypingTest
                     Console.ForegroundColor = ConsoleColor.DarkGreen;
                     Console.Write(letter);
                     Console.ResetColor();
+                    CountOfLetters++;
                 }
                 else
                 {
+                    soundPlayer.Play();
                     Console.BackgroundColor = ConsoleColor.DarkRed;
                     Console.Write(letter);
                     Console.ResetColor();
+                    Mistakes++;
                 }
                 i++;
             }
+            Console.CursorVisible = false;
+            Score();
         }
 
         private void Timer()
@@ -63,11 +109,65 @@ namespace TypingTest
             do
             {
                 Console.CursorVisible = false;
+
                 Console.SetCursorPosition(0, 15);
-                Console.WriteLine($"Time: 00:{60 - stopwatch.ElapsedMilliseconds / 1000}         ");
+                Console.WriteLine($"Time Left: 0:{60 - stopwatch.ElapsedMilliseconds / 1000}");
                 Thread.Sleep(1000);
             }
-            while (60 - stopwatch.ElapsedMilliseconds / 1000 != 0);
+            while (60 - stopwatch.ElapsedMilliseconds / 1000 >= 0);
+
+            stopwatch.Stop();
+            stopwatch.Reset();
+
+            TimeIsOver = true;
+        }
+
+        private void AddToScoreTable()
+        {
+            List<User> users;
+            if (!File.Exists("ScoreTable.json")) 
+            {
+                FileStream fileStream = File.Create("ScoreTable.json");
+                users = new List<User>();
+                fileStream.Dispose();
+            }
+            else
+            {
+                string usersInfo = File.ReadAllText("ScoreTable.json");
+                users = JsonConvert.DeserializeObject<List<User>>(usersInfo);
+            }
+
+            users.Add(new User(UserName, CountOfLetters, Math.Round(Convert.ToDouble(CountOfLetters) / 60, 3), Mistakes));
+
+            users.Sort((x, y) => x.LettersPerMinute.CompareTo(y.LettersPerMinute));
+            users.Reverse();
+
+            string json = JsonConvert.SerializeObject(users);
+            File.WriteAllText("ScoreTable.json", json);
+        }
+
+        private void Score()
+        {
+            Console.SetCursorPosition(0, 16);
+            Console.WriteLine($"Result: {CountOfLetters} letters per minute // {Math.Round(Convert.ToDouble(CountOfLetters) / 60 , 3)} letters per second. \nMistakes: {Mistakes}\nPress ENTER to repeat.\nPress ESC to exit.");
+
+            AddToScoreTable();
+
+            CountOfLetters = 0;
+            Mistakes = 0;
+
+            ConsoleKeyInfo Key;
+            do
+            {
+                Key = Console.ReadKey(true);
+                if (Key.Key == ConsoleKey.Escape)
+                {
+                    KeyboardMenu.MainMenu();
+                }
+            } while (Key.Key != ConsoleKey.Enter);
+
+            Console.Clear();
+            Test();
         }
 
         private char[] TextToWrite()
